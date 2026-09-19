@@ -1,0 +1,2 @@
+# lotomation.github.io
+website
