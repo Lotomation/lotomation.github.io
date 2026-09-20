@@ -3,18 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotomation - Industriële Automatisatie & PCB Design</title>
+    <title>Lotomation | Voertuigautomatisatie, PCB Design & 3D Prototyping</title>
+    <meta name="description" content="Op maat gemaakte sturingssystemen, PCB-ontwerp en 3D-prototyping voor voertuigen en industriële toepassingen.">
     <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #121212; color: #fff; text-align: center; }
-        h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        p { color: #aaa; font-size: 1.2rem; }
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --accent-hover: #0284c7;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #ffffff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #0f172a;
+            font-weight: 600;
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .services {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .about {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 4rem 2rem;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .contact {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav a {
+                margin: 0 0.75rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Lotomation</h1>
-        <p>Op maat gemaakte 3D-ontwerpen, PCB's en automatisaties.</p>
-        <p><strong>Binnenkort online!</strong></p>
-    </div>
+
+    <header>
+        <a href="#" class="logo">LOTO<span>MATION</span></a>
+        <nav>
+            <a href="#diensten">Diensten</a>
+            <a href="#over">Over Lotomation</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Op maat gemaakte elektronica & automatisatie</h1>
+        <p>Specialist in custom sturingssystemen voor voertuigen, PCB-ontwerp, embedded hardware en functionele 3D-prototypes.</p>
+        <a href="#contact" class="btn">Vraag een adviesgesprek aan</a>
+    </section>
+
+    <section class="services" id="diensten">
+        <h2 class="section-title">Onze Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Voertuigautomatisatie</h3>
+                <p>Ontwerp en installatie van op maat gemaakte sturingen voor vrachtwagens, bedrijfsvoertuigen en mobiele installaties op basis van robuuste microcontrollers.</p>
+            </div>
+            <div class="card">
+                <h3>PCB Design & Hardware</h3>
+                <p>Ontwikkeling van klantspecifieke printplaten (PCB layout), prototyping, assemblage en op maat gemaakte kabelbomen voor industriële toepassingen.</p>
+            </div>
+            <div class="card">
+                <h3>3D-CAD & Prototyping</h3>
+                <p>3D-ontwerp en additive manufacturing (3D-printen) van op maat gemaakte behuizingen, beschermkappen en montagesteunen in hoogwaardige kunststoffen.</p>
+            </div>
+            <div class="card">
+                <h3>Engineering & Consultancy</h3>
+                <p>Technisch advies en ondersteuning bij het automatiseren, digitaliseren en integreren van Operationele Technologie (OT) en embedded systemen.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="over">
+        <div class="about-content">
+            <h2>Snelle, doelgerichte hardware-oplossingen</h2>
+            <p>Lotomation biedt flexibele en kwalitatieve engineering-oplossingen voor bedrijven die op zoek zijn naar maatwerk in elektronica en mechanica. Van een eerste prototype tot een werkend eindproduct op de werkvloer of op de weg.</p>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Neem contact op</h2>
+        <p>Heb je een project, een idee voor een sturingssysteem of een specifiek hardware-vraagstuk?</p>
+        <a href="mailto:info@lotomation.be" class="btn">Stuur een e-mail naar info@lotomation.be</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Lotomation — Alle rechten voorbehouden. Kleine onderneming onderworpen aan de vrijstellingsregeling van belasting (btw-vrijgesteld).</p>
+    </footer>
+
 </body>
 </html>
